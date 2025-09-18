@@ -14,21 +14,6 @@ exports.getAll = (req, res) => {
 };
 
 // ============================
-// Controlador: GET balada por ID
-// ============================
-exports.getById = (req, res) => {
-  Balada.getBaladaById(req.params.id, (err, balada) => {
-    if (err) {
-      res.status(500).send(err);
-    } else if (balada) {
-      res.json(balada);
-    } else {
-      res.status(404).send({ message: "Balada não encontrada" });
-    }
-  });
-};
-
-// ============================
 // Controlador: GET baladas por cidade
 // ============================
 exports.getByCidade = (req, res) => {

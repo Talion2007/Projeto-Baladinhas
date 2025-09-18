@@ -6,7 +6,7 @@ const baseURL = "http://10.136.38.254:3000/baladas";
 export default function DeletarBalada() {
     const [id, setId] = useState("");
 
-    const deletar = async () => {
+    async function deletar() {
         if (!id) return Alert.alert("Erro", "Digite o ID da balada");
         const res = await fetch(`${baseURL}/${id}`, { method: "DELETE" });
         if (res.status === 404) Alert.alert("Balada não encontrada");

@@ -46,15 +46,6 @@ function getBaladasByData(data, callback) {
   });
 }
 
-// Buscar balada por ID
-function getBaladaById(id, callback) {
-  const db = openDbConnection();
-  db.get("SELECT * FROM Baladas WHERE id = ?", [id], (err, row) => {
-    db.close();
-    callback(err, row);
-  });
-}
-
 // Criar nova balada
 // Criar nova balada
 function createBalada(balada, callback) {
@@ -103,7 +94,6 @@ module.exports = {
   getAllBaladas,
   getBaladasByCidade,
   getBaladasByData,
-  getBaladaById,
   createBalada,
   updateBalada,
   deleteBalada,

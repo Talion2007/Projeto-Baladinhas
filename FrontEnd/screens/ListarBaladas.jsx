@@ -6,7 +6,7 @@ const baseURL = "http://10.136.38.254:3000/baladas";
 export default function ListarBaladas() {
     const [baladas, setBaladas] = useState([]);
 
-    const carregarBaladas = async () => {
+    async function carregarBaladas() {
         try {
             const res = await fetch(baseURL);
             const data = await res.json();

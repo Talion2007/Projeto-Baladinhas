@@ -7,7 +7,7 @@ export default function ConsultarPorCidade() {
     const [cidade, setCidade] = useState("");
     const [baladas, setBaladas] = useState([]);
 
-    const buscar = async () => {
+    async function buscar() {
         if (!cidade) return Alert.alert("Erro", "Digite uma cidade");
         const res = await fetch(`${baseURL}/cidade/${cidade}`);
         const data = await res.json();

@@ -10,7 +10,7 @@ export default function AtualizarBalada() {
     const [data_evento, setDataEvento] = useState("");
     const [tipo, setTipo] = useState("");
 
-    const atualizar = async () => {
+    async function atualizar() {
         if (!id || !cidade || !endereco || !data_evento || !tipo) return Alert.alert("Erro", "Preencha todos os campos");
         const res = await fetch(`${baseURL}/${id}`, {
             method: "PUT",

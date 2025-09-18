@@ -9,7 +9,7 @@ export default function CriarBalada() {
     const [data_evento, setDataEvento] = useState("");
     const [tipo, setTipo] = useState("");
 
-    const criar = async () => {
+    async function criar() {
         if (!cidade || !endereco || !data_evento || !tipo) return Alert.alert("Erro", "Preencha todos os campos");
         await fetch(baseURL, {
             method: "POST",

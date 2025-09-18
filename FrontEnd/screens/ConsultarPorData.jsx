@@ -7,7 +7,7 @@ export default function ConsultarPorData() {
     const [data, setData] = useState("");
     const [baladas, setBaladas] = useState([]);
 
-    const buscar = async () => {
+    async function buscar() {
         if (!data) return Alert.alert("Erro", "Digite uma data");
         const res = await fetch(`${baseURL}/data/${data}`);
         const dataResp = await res.json();

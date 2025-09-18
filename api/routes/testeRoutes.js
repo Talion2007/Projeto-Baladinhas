@@ -6,9 +6,6 @@ const baladaController = require("../controllers/testeController");
 // Rota para obter todas as baladas
 router.get("/", baladaController.getAll);
 
-// Rota para obter uma balada pelo ID
-router.get("/:id", baladaController.getById);
-
 // Rota para obter baladas por cidade
 router.get("/cidade/:cidade", baladaController.getByCidade);
 
